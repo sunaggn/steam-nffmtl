@@ -1,0 +1,86 @@
+{
+  "auc": {
+    "auc_review_label": 0.5452910651440063,
+    "n_rows": 1818,
+    "positive_rate": 0.7854785478547854
+  },
+  "beyond": {
+    "arp@10": 213.42796271637818,
+    "arp@20": 172.50046604527296,
+    "coverage@10": 0.41624365482233505,
+    "coverage@20": 0.5583756345177665,
+    "gini@10": 0.8513332477170881,
+    "gini@20": 0.782155096081705,
+    "long_tail_share@10": 0.07842876165113183,
+    "long_tail_share@20": 0.17902796271637816,
+    "mean_list_length@10": 10.0,
+    "mean_list_length@20": 20.0,
+    "novelty@10": 6.151385286401549,
+    "novelty@20": 6.462508515194529,
+    "tag_ild@10": 0.8073267281531653,
+    "tag_ild@20": 0.838807298086296,
+    "tag_ild_valid_share@10": 1.0,
+    "tag_ild_valid_share@20": 1.0,
+    "untagged_share@10": 0.09627163781624501,
+    "untagged_share@20": 0.05952063914780293
+  },
+  "code_sha256": "0b67b69ffa2bd8d69b86ffe6f18a8e615b961a6e9672fe3b644fd37ac86962cc",
+  "config_id": "ItemKNN-CF@9ec2588d8f",
+  "config_sha256": "adee49de6d17590b86b7fba9d1a2837b839f74e0fa1a75403bcee5270497b0e6",
+  "coverage": {
+    "evaluated_users": 751,
+    "failed_users": 0,
+    "protocol_users": 751,
+    "seconds": 0.0,
+    "short_list_users@10": 0,
+    "short_list_users@20": 0
+  },
+  "data_fingerprint": "71649de397dd94fd8844d4b8170049bb03d09c850427cda1909d1200f8567321",
+  "errors": [],
+  "fit_seconds": 0.0,
+  "model": "ItemKNN-CF",
+  "model_params": {
+    "k": 50,
+    "shrink": 10.0
+  },
+  "seed": 0,
+  "seed_dependent": false,
+  "split": "test-interaction",
+  "split_fingerprint": "aa307479724230dcea0a78db03f07a74c39b19aed1587e1f6f30ba3065e75628",
+  "stage": "smoke",
+  "summary": {
+    "hr@10": 0.5512649800266312,
+    "hr@20": 0.6750998668442078,
+    "ndcg@10": 0.23984480104717062,
+    "ndcg@20": 0.2804598610200204,
+    "precision@10": 0.07683089214380825,
+    "precision@20": 0.05459387483355526,
+    "recall@10": 0.3292565660408536,
+    "recall@20": 0.45616647740482624
+  },
+  "train_code_sha256": "0b67b69ffa2bd8d69b86ffe6f18a8e615b961a6e9672fe3b644fd37ac86962cc",
+  "train_stage": "smoke",
+  "train_task": "positive",
+  "training_settings": {
+    "data": {
+      "dedup": "keep_last",
+      "kcore": 5,
+      "n_tags": 20,
+      "preprocess_version": "pp2",
+      "test_year": 2022,
+      "train_years": [
+        2010,
+        2020
+      ],
+      "val_year": 2021
+    },
+    "model": "ItemKNN-CF",
+    "params": {
+      "k": 50,
+      "shrink": 10.0
+    },
+    "train_task": "positive"
+  },
+  "training_signature": "9ec2588d8f2fe28bd003f5063d8cb283ff96b027e3ca3f7b503c4848f84d6ef2",
+  "valid": true
+}

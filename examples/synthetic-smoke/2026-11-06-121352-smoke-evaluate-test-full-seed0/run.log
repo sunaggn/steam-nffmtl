@@ -1,0 +1,4 @@
+2026-11-06 12:13:52,154 INFO run directory: /tmp/ex31/2026-11-06-121347-smoke/r/2026-11-06-121352-smoke-evaluate-test-full-seed0
+2026-11-06 12:13:52,368 INFO NFF-MTL test-positive ndcg@20=0.20147 recall@20=0.37759
+2026-11-06 12:13:52,376 INFO NFF-MTL test-interaction ndcg@20=0.21842 recall@20=0.38452
+2026-11-06 12:13:52,447 INFO playtime log-MAE: {'NFF-MTL': 1.022, 'GlobalMean': 0.9769, 'GameMedian': 0.9789, 'UserGameMean': 1.0057}

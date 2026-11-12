@@ -1,0 +1,60 @@
+# Final experiment template. Prefer the `final_selected.yaml` written by `tune` (it contains the selected
+# hyperparameters); this file documents the defaults. Only stage 'final' may evaluate the test year; each
+# model identity is evaluated on test once (registry next to the data cache; a guard, not a tamper-proof lock).
+experiment:
+  stage: final
+  name: steam-nffmtl-64d
+data:
+  recommendations_csv: /content/drive/MyDrive/steamRS/recommendations.csv
+  metadata_json: /content/drive/MyDrive/steamRS/games_metadata.json
+  cache_dir: /content/drive/MyDrive/steamRS/cache_v1
+  train_years: [2010, 2020]
+  val_year: 2021
+  test_year: 2022
+  kcore: 5            # applied to training years only
+  n_tags: 50          # vocabulary from training-catalog games only
+  dedup: keep_last
+  verify_source_hash: true    # final stage: re-hash raw files on every cache load
+task:
+  primary: positive                 # future positively reviewed games
+  sensitivity_relevance: [interaction]  # any future review, reported separately
+eval:
+  ks: [10, 20]
+  test_user_sample: null            # null = every eligible training-known user
+  val_user_sample: 20000            # fixed seeded sample used for epoch selection
+  user_batch_size: 256
+  auc_rows: 500000                  # same observed test rows for every model
+  sample_seed: 20260101
+  fail_on_error: true
+  head_share: 0.2
+  short_lists: report               # users with < K candidates get shorter lists (counted)
+train:
+  seed: 0
+  embedding_dim: 64
+  hidden: [128, 64, 32]
+  dropout: [0.3, 0.2]
+  alpha: 0.5
+  neg_ratio: 4
+  batch_size_total: 4096
+  lr: 0.001
+  weight_decay: 0.00001
+  grad_clip: 1.0
+  scheduler_t0: 2
+  scheduler_tmult: 2
+  max_epochs: 15
+  patience: 3
+  select_metric: ndcg@20
+  pos_weight: auto
+  reg_min_hours: 0.0
+  item_chunk: 4096
+  deterministic: true
+baselines:
+  random: {enabled: true}
+  popularity: {enabled: true}
+  tagknn: {enabled: true, k: 100}
+  itemknn: {enabled: true, k: 100, shrink: 10.0}
+  bpr: {enabled: true, factors: 64, learning_rate: 0.01, regularization: 0.01, iterations: 100}
+  als: {enabled: true, factors: 64, regularization: 0.1, alpha: 1.0, iterations: 15}
+  ease: {enabled: false, l2: 500.0, max_items: 40000, device: cuda, memory_fraction: 0.8}   # enable after `estimate`
+  use_gpu: {enabled: false}
+runs_dir: /content/drive/MyDrive/steamRS/runs_final

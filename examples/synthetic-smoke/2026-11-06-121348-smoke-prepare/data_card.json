@@ -1,0 +1,110 @@
+{
+  "data_config": {
+    "dedup": "keep_last",
+    "kcore": 5,
+    "n_tags": 20,
+    "preprocess_version": "pp2",
+    "test_year": 2022,
+    "train_years": [
+      2010,
+      2020
+    ],
+    "val_year": 2021
+  },
+  "dataset": "Game Recommendations on Steam (A. Kozyriev, Kaggle)",
+  "duplicates_removed": {
+    "test": 18,
+    "train": 140,
+    "val": 24
+  },
+  "fingerprint": "71649de397dd94fd8844d4b8170049bb03d09c850427cda1909d1200f8567321",
+  "kcore": {
+    "applied_to": "training years only",
+    "games_after": 197,
+    "games_before": 200,
+    "iterations": 3,
+    "k": 5,
+    "rows_after": 13482,
+    "rows_before": 14144,
+    "sparsity_after": 0.9318361073472607,
+    "users_after": 1004,
+    "users_before": 1198
+  },
+  "raw": {
+    "date_max": "2022-12-31",
+    "date_min": "2014-01-01",
+    "games_in_reviews": 200,
+    "metadata_bad_lines": 0,
+    "metadata_games": 200,
+    "rows": 18349,
+    "rows_outside_split_years": 0,
+    "users": 1200
+  },
+  "raw_sha256": {
+    "metadata_json": "0bdb646a9025ac23fab0933995e31aae28f2fdc2c4168b3de872260091a6ebd8",
+    "recommendations_csv": "2120eecea2c6b3cf80f19c131282b9383e7e4bda8dbab72d2d8525a10db7fbba"
+  },
+  "repeated_pairs_across_partitions": {
+    "test_pairs_also_in_train_or_val": 0,
+    "val_pairs_also_in_train": 0
+  },
+  "rows_after_dedup": {
+    "test": 1994,
+    "train": 14144,
+    "val": 2029
+  },
+  "split": {
+    "row_share_after_dedup": {
+      "test": 0.1098,
+      "train": 0.7786,
+      "val": 0.1117
+    },
+    "test_year": 2022,
+    "train_years": [
+      2010,
+      2020
+    ],
+    "unit": "global calendar-year split",
+    "val_year": 2021
+  },
+  "tags": {
+    "catalog_games_with_metadata": 197,
+    "catalog_games_without_any_selected_tag": 19,
+    "n_tags": 20,
+    "note": "Tags come from a metadata snapshot collected after the test year (static-feature assumption).",
+    "vocabulary": "top-n tags by document frequency over training-catalog games"
+  },
+  "test": {
+    "games": 192,
+    "positive_rate": 0.7888665997993982,
+    "rows": 1994,
+    "rows_cold_user": 173,
+    "rows_known_user_cold_game": 3,
+    "rows_warm": 1818,
+    "share_users_known": 0.8682080924855491,
+    "users": 865,
+    "users_known": 751
+  },
+  "train": {
+    "games": 197,
+    "positive_rate": 0.7774069129209316,
+    "rows": 13482,
+    "rows_hours_gt_0": 13248,
+    "users": 1004
+  },
+  "unverified_assumptions": [
+    "Game metadata (tags) is a single snapshot taken after 2022, not a historical record; tag features may contain information from after the training years.",
+    "It is not verified whether `hours` is playtime at review time or cumulative playtime at data collection; in the latter case the regression target of training reviews contains post-review activity."
+  ],
+  "val": {
+    "games": 189,
+    "positive_rate": 0.7792015771315919,
+    "rows": 2029,
+    "rows_cold_user": 188,
+    "rows_known_user_cold_game": 2,
+    "rows_warm": 1839,
+    "share_users_known": 0.8679678530424799,
+    "users": 871,
+    "users_known": 756
+  }
+}

@@ -1,0 +1,38 @@
+# Synthetic smoke test (CPU, seconds). Paths and stage are overridden by `cli smoke`.
+experiment:
+  stage: smoke
+data:
+  recommendations_csv: unused.csv
+  metadata_json: unused.json
+  cache_dir: cache_smoke
+  train_years: [2010, 2020]
+  val_year: 2021
+  test_year: 2022
+  kcore: 5
+  n_tags: 20
+task:
+  primary: positive
+  sensitivity_relevance: [interaction]
+eval:
+  ks: [10, 20]
+  test_user_sample: null
+  val_user_sample: null
+  user_batch_size: 128
+  auc_rows: null
+train:
+  seed: 0
+  embedding_dim: 16
+  hidden: [32, 16, 8]
+  max_epochs: 3
+  patience: 2
+  batch_size_total: 1024
+  item_chunk: 256
+baselines:
+  random: {enabled: true}
+  popularity: {enabled: true}
+  tagknn: {enabled: true, k: 50}
+  itemknn: {enabled: true, k: 50, shrink: 10.0}
+  bpr: {enabled: true, factors: 16, iterations: 30}
+  als: {enabled: true, factors: 16, iterations: 5}
+  ease: {enabled: true, l2: 50.0, max_items: 5000, device: cpu}
+runs_dir: runs_smoke

@@ -1,0 +1,6 @@
+2026-11-06 12:13:50,338 INFO run directory: /tmp/ex31/2026-11-06-121347-smoke/r/2026-11-06-121350-smoke-train-full-seed0
+2026-11-06 12:13:50,973 INFO variant=full seed=0 pos_weight=5.431638202461597 rows=13482 real/batch=204
+2026-11-06 12:13:51,270 INFO epoch 1 | loss 2.0543 (bce 1.1924, l1 1.7238) | val ndcg@20 0.19147 | 0s + 0s
+2026-11-06 12:13:51,672 INFO epoch 2 | loss 1.7768 (bce 1.1515, l1 1.2506) | val ndcg@20 0.17893 | 0s + 0s
+2026-11-06 12:13:51,945 INFO epoch 3 | loss 1.6596 (bce 1.1173, l1 1.0846) | val ndcg@20 0.20349 | 0s + 0s
+2026-11-06 12:13:52,136 INFO selected epoch 3; checkpoint /tmp/ex31/2026-11-06-121347-smoke/r/2026-11-06-121350-smoke-train-full-seed0/checkpoint_best.pt

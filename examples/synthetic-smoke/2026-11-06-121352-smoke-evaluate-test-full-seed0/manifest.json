@@ -1,0 +1,14 @@
+{
+  "checkpoint": "/tmp/ex31/2026-11-06-121347-smoke/r/2026-11-06-121350-smoke-train-full-seed0/checkpoint_best.pt",
+  "checkpoint_sha256": "c6bd4e7fb2518cf16eaed1e7c58f6853db32ab798d04be8fee17f30ece1a6ab9",
+  "code_sha256": "0b67b69ffa2bd8d69b86ffe6f18a8e615b961a6e9672fe3b644fd37ac86962cc",
+  "command": "evaluate",
+  "config_sha256": "adee49de6d17590b86b7fba9d1a2837b839f74e0fa1a75403bcee5270497b0e6",
+  "created_at_utc": "2026-11-06T12:13:52.153958+00:00",
+  "run_dir": "/tmp/ex31/2026-11-06-121347-smoke/r/2026-11-06-121352-smoke-evaluate-test-full-seed0",
+  "run_id": "83dd95107dfd4316826a10e2ad746f83",
+  "seed": 0,
+  "stage": "smoke",
+  "target": "test",
+  "variant": "full"
+}

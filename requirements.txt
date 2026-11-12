@@ -1,0 +1,11 @@
+# Exact versions used to run the test suite (Python 3.12.3, CPU sandbox).
+# Use in a fresh virtual environment for strict reproduction.
+numpy==2.5.4
+pandas==3.0.6
+scipy==1.18.1
+torch==2.5.1
+implicit==0.7.3
+PyYAML==6.0.3
+tqdm==4.70.1
+threadpoolctl==3.7.0
+pytest==9.2.0

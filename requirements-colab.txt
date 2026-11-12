@@ -1,0 +1,5 @@
+# Google Colab: numpy / pandas / scipy / torch / PyYAML / pytest are preinstalled and kept.
+# `pip install -e .` checks their minimum versions (pyproject.toml); `cli preflight`
+# verifies imports, implicit's matrix orientation and the CUDA code paths, and records
+# exact versions (also written to env.json of every run). Strict pins: requirements.txt.
+implicit==0.7.3

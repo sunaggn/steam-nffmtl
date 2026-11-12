@@ -1,0 +1,131 @@
+{
+  "auc": {
+    "auc_review_label": 0.4809793148028442,
+    "n_rows": 1818,
+    "positive_rate": 0.7854785478547854
+  },
+  "best_epoch": 3,
+  "beyond": {
+    "arp@10": 201.97669773635153,
+    "arp@20": 166.99607190412783,
+    "coverage@10": 0.20304568527918782,
+    "coverage@20": 0.3096446700507614,
+    "gini@10": 0.9263668746240208,
+    "gini@20": 0.8615551515069586,
+    "long_tail_share@10": 0.05166444740346205,
+    "long_tail_share@20": 0.2507989347536618,
+    "mean_list_length@10": 10.0,
+    "mean_list_length@20": 20.0,
+    "novelty@10": 6.237250514993404,
+    "novelty@20": 6.520126309919021,
+    "tag_ild@10": 0.8721737655279005,
+    "tag_ild@20": 0.8712688496363623,
+    "tag_ild_valid_share@10": 1.0,
+    "tag_ild_valid_share@20": 1.0,
+    "untagged_share@10": 0.08974700399467377,
+    "untagged_share@20": 0.06664447403462051
+  },
+  "checkpoint_sha256": "c6bd4e7fb2518cf16eaed1e7c58f6853db32ab798d04be8fee17f30ece1a6ab9",
+  "code_sha256": "0b67b69ffa2bd8d69b86ffe6f18a8e615b961a6e9672fe3b644fd37ac86962cc",
+  "config_id": "NFF-MTL@2a3e8e26c4",
+  "config_sha256": "adee49de6d17590b86b7fba9d1a2837b839f74e0fa1a75403bcee5270497b0e6",
+  "coverage": {
+    "evaluated_users": 751,
+    "failed_users": 0,
+    "protocol_users": 751,
+    "seconds": 0.0,
+    "short_list_users@10": 0,
+    "short_list_users@20": 0
+  },
+  "data_fingerprint": "71649de397dd94fd8844d4b8170049bb03d09c850427cda1909d1200f8567321",
+  "errors": [],
+  "model": "NFF-MTL",
+  "model_params": {
+    "dropout": [
+      0.3,
+      0.2
+    ],
+    "embedding_dim": 16,
+    "hidden": [
+      32,
+      16,
+      8
+    ],
+    "n_items": 197,
+    "n_tags": 20,
+    "n_users": 1004,
+    "use_content": true,
+    "use_mtl": true,
+    "variant": "full"
+  },
+  "seed": 0,
+  "seed_dependent": true,
+  "split": "test-interaction",
+  "split_fingerprint": "aa307479724230dcea0a78db03f07a74c39b19aed1587e1f6f30ba3065e75628",
+  "stage": "smoke",
+  "summary": {
+    "hr@10": 0.4833555259653795,
+    "hr@20": 0.6125166444740346,
+    "ndcg@10": 0.18065663282539945,
+    "ndcg@20": 0.2184186583215227,
+    "precision@10": 0.06205059920106524,
+    "precision@20": 0.04600532623169108,
+    "recall@10": 0.2689770541634723,
+    "recall@20": 0.38451838145579825
+  },
+  "train_code_sha256": "0b67b69ffa2bd8d69b86ffe6f18a8e615b961a6e9672fe3b644fd37ac86962cc",
+  "train_stage": "smoke",
+  "train_task": "positive",
+  "training_settings": {
+    "data": {
+      "dedup": "keep_last",
+      "kcore": 5,
+      "n_tags": 20,
+      "preprocess_version": "pp2",
+      "test_year": 2022,
+      "train_years": [
+        2010,
+        2020
+      ],
+      "val_year": 2021
+    },
+    "model": "NFF-MTL",
+    "selection": {
+      "metric": "ndcg@20",
+      "sample_seed": 20260101,
+      "val_user_sample": null
+    },
+    "train": {
+      "alpha": 0.5,
+      "batch_size_total": 1024,
+      "deterministic": true,
+      "dropout": [
+        0.3,
+        0.2
+      ],
+      "embedding_dim": 16,
+      "grad_clip": 1.0,
+      "hidden": [
+        32,
+        16,
+        8
+      ],
+      "lr": 0.001,
+      "max_batches_per_epoch": null,
+      "max_epochs": 3,
+      "neg_ratio": 4,
+      "patience": 2,
+      "pos_weight": "auto",
+      "reg_min_hours": 0.0,
+      "scheduler_t0": 2,
+      "scheduler_tmult": 2,
+      "select_metric": "ndcg@20",
+      "weight_decay": 1e-05
+    },
+    "train_task": "positive",
+    "variant": "full"
+  },
+  "training_signature": "2a3e8e26c493594aa2656bfa57bfddc3d3dd5f7d08b5d40fd198b12bb09cd37b",
+  "valid": true,
+  "variant": "full"
+}

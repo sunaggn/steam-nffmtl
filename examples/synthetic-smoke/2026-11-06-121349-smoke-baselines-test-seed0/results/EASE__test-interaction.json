@@ -1,0 +1,88 @@
+{
+  "auc": {
+    "auc_review_label": 0.5857124901242549,
+    "n_rows": 1818,
+    "positive_rate": 0.7854785478547854
+  },
+  "beyond": {
+    "arp@10": 172.94713715046603,
+    "arp@20": 141.06138482023968,
+    "coverage@10": 0.6598984771573604,
+    "coverage@20": 0.8578680203045685,
+    "gini@10": 0.7286798650868218,
+    "gini@20": 0.6165572806477997,
+    "long_tail_share@10": 0.24953395472703063,
+    "long_tail_share@20": 0.3952063914780293,
+    "mean_list_length@10": 10.0,
+    "mean_list_length@20": 20.0,
+    "novelty@10": 6.518936450487937,
+    "novelty@20": 6.840027397510777,
+    "tag_ild@10": 0.7817345220302933,
+    "tag_ild@20": 0.8156507350157167,
+    "tag_ild_valid_share@10": 1.0,
+    "tag_ild_valid_share@20": 1.0,
+    "untagged_share@10": 0.0989347536617843,
+    "untagged_share@20": 0.0833555259653795
+  },
+  "code_sha256": "0b67b69ffa2bd8d69b86ffe6f18a8e615b961a6e9672fe3b644fd37ac86962cc",
+  "config_id": "EASE@f5542cbee1",
+  "config_sha256": "adee49de6d17590b86b7fba9d1a2837b839f74e0fa1a75403bcee5270497b0e6",
+  "coverage": {
+    "evaluated_users": 751,
+    "failed_users": 0,
+    "protocol_users": 751,
+    "seconds": 0.0,
+    "short_list_users@10": 0,
+    "short_list_users@20": 0
+  },
+  "data_fingerprint": "71649de397dd94fd8844d4b8170049bb03d09c850427cda1909d1200f8567321",
+  "errors": [],
+  "fit_seconds": 0.0,
+  "model": "EASE",
+  "model_params": {
+    "device": "cpu",
+    "l2": 50.0,
+    "max_items": 5000
+  },
+  "seed": 0,
+  "seed_dependent": false,
+  "split": "test-interaction",
+  "split_fingerprint": "aa307479724230dcea0a78db03f07a74c39b19aed1587e1f6f30ba3065e75628",
+  "stage": "smoke",
+  "summary": {
+    "hr@10": 0.5033288948069241,
+    "hr@20": 0.6271637816245007,
+    "ndcg@10": 0.20306633201263663,
+    "ndcg@20": 0.2393819807828786,
+    "precision@10": 0.07137150466045274,
+    "precision@20": 0.049400798934753666,
+    "recall@10": 0.28701822293699786,
+    "recall@20": 0.4041638565606608
+  },
+  "train_code_sha256": "0b67b69ffa2bd8d69b86ffe6f18a8e615b961a6e9672fe3b644fd37ac86962cc",
+  "train_stage": "smoke",
+  "train_task": "positive",
+  "training_settings": {
+    "data": {
+      "dedup": "keep_last",
+      "kcore": 5,
+      "n_tags": 20,
+      "preprocess_version": "pp2",
+      "test_year": 2022,
+      "train_years": [
+        2010,
+        2020
+      ],
+      "val_year": 2021
+    },
+    "model": "EASE",
+    "params": {
+      "device": "cpu",
+      "l2": 50.0,
+      "max_items": 5000
+    },
+    "train_task": "positive"
+  },
+  "training_signature": "f5542cbee1d81029a014631c8b2c5a0da4792bc4220c316ecc6bf3d73b721124",
+  "valid": true
+}

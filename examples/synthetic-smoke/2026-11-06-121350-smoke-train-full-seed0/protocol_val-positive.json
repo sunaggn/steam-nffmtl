@@ -1,0 +1,22 @@
+{
+  "candidates": "full training catalog minus history",
+  "data_fingerprint": "71649de397dd94fd8844d4b8170049bb03d09c850427cda1909d1200f8567321",
+  "eligible_relevant_pairs": 1427,
+  "evaluated_users": 674,
+  "fingerprint": "1f4dedf02127edeb24fa3041bb200da0c81d8a69bbab90df760efb9f4855b62c",
+  "history_cutoff": "end of training years",
+  "known_users_in_target": 756,
+  "mean_eligible_relevant_per_user": 2.1172106824925816,
+  "min_candidates_per_user": 135,
+  "n_candidate_items": 197,
+  "relevance": "positive",
+  "rows_cold_game_excluded": 2,
+  "rows_cold_user_excluded": 188,
+  "rows_not_relevant_label": 412,
+  "rows_relevant_but_in_history_excluded": 0,
+  "target": "val",
+  "target_rows": 2029,
+  "target_users": 871,
+  "users_with_eligible_relevant": 674,
+  "users_with_fewer_than_20_candidates": 0
+}

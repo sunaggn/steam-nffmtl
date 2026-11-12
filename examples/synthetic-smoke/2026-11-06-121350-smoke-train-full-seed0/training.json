@@ -1,0 +1,131 @@
+{
+  "best_epoch": 3,
+  "best_val_ndcg@20": 0.20348743003659153,
+  "checkpoint": "/tmp/ex31/2026-11-06-121347-smoke/r/2026-11-06-121350-smoke-train-full-seed0/checkpoint_best.pt",
+  "checkpoint_sha256": "c6bd4e7fb2518cf16eaed1e7c58f6853db32ab798d04be8fee17f30ece1a6ab9",
+  "config_id": "NFF-MTL@2a3e8e26c4",
+  "history": [
+    {
+      "batches": 67,
+      "epoch": 1,
+      "full_epoch_batches": 67,
+      "host_max_rss_gb": 0.546,
+      "lr": 0.0005,
+      "peak_gpu_memory_gb": null,
+      "seconds_per_batch": 0.0038,
+      "train_bce": 1.192402398408349,
+      "train_l1": 1.723776518408932,
+      "train_loss": 2.0542909992274954,
+      "train_seconds": 0.3,
+      "val_ndcg@20": 0.19147199942705334,
+      "val_seconds": 0.0,
+      "val_users": 674
+    },
+    {
+      "batches": 67,
+      "epoch": 2,
+      "full_epoch_batches": 67,
+      "host_max_rss_gb": 0.546,
+      "lr": 0.001,
+      "peak_gpu_memory_gb": null,
+      "seconds_per_batch": 0.00372,
+      "train_bce": 1.151488574583139,
+      "train_l1": 1.2506161590120686,
+      "train_loss": 1.7767965971533932,
+      "train_seconds": 0.2,
+      "val_ndcg@20": 0.1789314726039181,
+      "val_seconds": 0.0,
+      "val_users": 674
+    },
+    {
+      "batches": 67,
+      "epoch": 3,
+      "full_epoch_batches": 67,
+      "host_max_rss_gb": 0.546,
+      "lr": 0.0008535533905932737,
+      "peak_gpu_memory_gb": null,
+      "seconds_per_batch": 0.00347,
+      "train_bce": 1.1172813301655784,
+      "train_l1": 1.0845963207643423,
+      "train_loss": 1.6595791489330691,
+      "train_seconds": 0.2,
+      "val_ndcg@20": 0.20348743003659153,
+      "val_seconds": 0.0,
+      "val_users": 674
+    }
+  ],
+  "model_spec": {
+    "dropout": [
+      0.3,
+      0.2
+    ],
+    "embedding_dim": 16,
+    "hidden": [
+      32,
+      16,
+      8
+    ],
+    "n_items": 197,
+    "n_tags": 20,
+    "n_users": 1004,
+    "use_content": true,
+    "use_mtl": true,
+    "variant": "full"
+  },
+  "parameters": 21898,
+  "pos_weight": 5.431638202461597,
+  "seed": 0,
+  "stage": "smoke",
+  "train_task": "positive",
+  "training_settings": {
+    "data": {
+      "dedup": "keep_last",
+      "kcore": 5,
+      "n_tags": 20,
+      "preprocess_version": "pp2",
+      "test_year": 2022,
+      "train_years": [
+        2010,
+        2020
+      ],
+      "val_year": 2021
+    },
+    "model": "NFF-MTL",
+    "selection": {
+      "metric": "ndcg@20",
+      "sample_seed": 20260101,
+      "val_user_sample": null
+    },
+    "train": {
+      "alpha": 0.5,
+      "batch_size_total": 1024,
+      "deterministic": true,
+      "dropout": [
+        0.3,
+        0.2
+      ],
+      "embedding_dim": 16,
+      "grad_clip": 1.0,
+      "hidden": [
+        32,
+        16,
+        8
+      ],
+      "lr": 0.001,
+      "max_batches_per_epoch": null,
+      "max_epochs": 3,
+      "neg_ratio": 4,
+      "patience": 2,
+      "pos_weight": "auto",
+      "reg_min_hours": 0.0,
+      "scheduler_t0": 2,
+      "scheduler_tmult": 2,
+      "select_metric": "ndcg@20",
+      "weight_decay": 1e-05
+    },
+    "train_task": "positive",
+    "variant": "full"
+  },
+  "training_signature": "2a3e8e26c493594aa2656bfa57bfddc3d3dd5f7d08b5d40fd198b12bb09cd37b",
+  "variant": "full"
+}

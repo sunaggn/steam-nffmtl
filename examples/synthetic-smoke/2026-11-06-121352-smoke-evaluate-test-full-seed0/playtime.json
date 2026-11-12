@@ -1,0 +1,90 @@
+{
+  "metrics": {
+    "GameMedian": {
+      "mae_hours_descriptive": 21.865820600683914,
+      "mae_log": 0.9788811570101411,
+      "median_ae_hours": 6.450152353185993,
+      "n": 1781,
+      "pearson_r_log": 0.012066179402358684,
+      "rmse_log": 1.2336997124353153,
+      "share_negative_log_predictions": 0.0,
+      "spearman_rho_log": 0.023438279420827622
+    },
+    "GlobalMean": {
+      "mae_hours_descriptive": 21.839071752680177,
+      "mae_log": 0.9768547046736722,
+      "median_ae_hours": 7.680035066677131,
+      "n": 1781,
+      "rmse_log": 1.211224470162116,
+      "share_negative_log_predictions": 0.0
+    },
+    "NFF-MTL": {
+      "mae_hours_descriptive": 22.09116342291716,
+      "mae_log": 1.0220417253995195,
+      "median_ae_hours": 4.970960681037686,
+      "n": 1781,
+      "pearson_r_log": 0.05273229302870506,
+      "rmse_log": 1.3257337646588014,
+      "share_negative_log_predictions": 0.0,
+      "spearman_rho_log": 0.059453115398778754
+    },
+    "UserGameMean": {
+      "mae_hours_descriptive": 22.44888534312237,
+      "mae_log": 1.005739373233149,
+      "median_ae_hours": 7.9512863644710166,
+      "n": 1781,
+      "pearson_r_log": 0.10136394602270733,
+      "rmse_log": 1.2470193224535384,
+      "share_negative_log_predictions": 0.0,
+      "spearman_rho_log": 0.08372397084778391
+    }
+  },
+  "paired_user_comparisons": {
+    "NFF-MTL - GameMedian (per-user log-MAE)": {
+      "ci95_user_bootstrap": [
+        0.016400869931713982,
+        0.0647335535456451
+      ],
+      "d_z": 0.12045687120902251,
+      "mean_a": 1.0323441156865076,
+      "mean_b": 0.9911293519495565,
+      "mean_diff": 0.04121476373695101,
+      "n_users": 743,
+      "p_wilcoxon": 0.00015671063026757265,
+      "rank_biserial": 0.16008191146036846,
+      "share_users_a_better": 0.5531628532974427,
+      "share_users_tied": 0.0
+    },
+    "NFF-MTL - GlobalMean (per-user log-MAE)": {
+      "ci95_user_bootstrap": [
+        0.008860504762998577,
+        0.07225406689763006
+      ],
+      "d_z": 0.09259762366131907,
+      "mean_a": 1.0323441156865076,
+      "mean_b": 0.9918120815372476,
+      "mean_diff": 0.04053203414925989,
+      "n_users": 743,
+      "p_wilcoxon": 0.009221329964124047,
+      "rank_biserial": 0.11026208772920014,
+      "share_users_a_better": 0.5477792732166891,
+      "share_users_tied": 0.0
+    },
+    "NFF-MTL - UserGameMean (per-user log-MAE)": {
+      "ci95_user_bootstrap": [
+        -0.031188561288523455,
+        0.045600278979322395
+      ],
+      "d_z": 0.011276379289059378,
+      "mean_a": 1.0323441156865076,
+      "mean_b": 1.026235198650088,
+      "mean_diff": 0.006108917036419628,
+      "n_users": 743,
+      "p_wilcoxon": 0.19536745152562884,
+      "rank_biserial": 0.05483436808058004,
+      "share_users_a_better": 0.5248990578734859,
+      "share_users_tied": 0.0
+    }
+  },
+  "rows": "warm test reviews with hours > reg_min_hours"
+}

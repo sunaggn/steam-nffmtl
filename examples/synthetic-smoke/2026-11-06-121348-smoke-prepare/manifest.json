@@ -1,0 +1,9 @@
+{
+  "code_sha256": "0b67b69ffa2bd8d69b86ffe6f18a8e615b961a6e9672fe3b644fd37ac86962cc",
+  "command": "prepare",
+  "config_sha256": "adee49de6d17590b86b7fba9d1a2837b839f74e0fa1a75403bcee5270497b0e6",
+  "created_at_utc": "2026-11-06T12:13:49.372427+00:00",
+  "run_dir": "/tmp/ex31/2026-11-06-121347-smoke/r/2026-11-06-121348-smoke-prepare",
+  "run_id": "5457d68e969e470cbf0e9106c12dc22f",
+  "stage": "smoke"
+}

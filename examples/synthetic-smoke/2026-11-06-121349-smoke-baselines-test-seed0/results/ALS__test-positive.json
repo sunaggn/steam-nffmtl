@@ -1,0 +1,86 @@
+{
+  "auc": {
+    "auc_review_label": 0.6164835164835165,
+    "n_rows": 1818,
+    "positive_rate": 0.7854785478547854
+  },
+  "beyond": {
+    "arp@10": 129.91893491124262,
+    "arp@20": 116.00184911242603,
+    "coverage@10": 0.583756345177665,
+    "coverage@20": 0.7411167512690355,
+    "gini@10": 0.6994278076472533,
+    "gini@20": 0.6016917970744602,
+    "long_tail_share@10": 0.32751479289940827,
+    "long_tail_share@20": 0.475,
+    "mean_list_length@10": 10.0,
+    "mean_list_length@20": 20.0,
+    "novelty@10": 6.813382050242142,
+    "novelty@20": 7.025641064578355,
+    "tag_ild@10": 0.7939552420518807,
+    "tag_ild@20": 0.8083802749948389,
+    "tag_ild_valid_share@10": 1.0,
+    "tag_ild_valid_share@20": 1.0,
+    "untagged_share@10": 0.05,
+    "untagged_share@20": 0.059023668639053256
+  },
+  "code_sha256": "0b67b69ffa2bd8d69b86ffe6f18a8e615b961a6e9672fe3b644fd37ac86962cc",
+  "config_id": "ALS@528154a05d",
+  "config_sha256": "adee49de6d17590b86b7fba9d1a2837b839f74e0fa1a75403bcee5270497b0e6",
+  "coverage": {
+    "evaluated_users": 676,
+    "failed_users": 0,
+    "protocol_users": 676,
+    "seconds": 0.0,
+    "short_list_users@10": 0,
+    "short_list_users@20": 0
+  },
+  "data_fingerprint": "71649de397dd94fd8844d4b8170049bb03d09c850427cda1909d1200f8567321",
+  "errors": [],
+  "fit_seconds": 0.0,
+  "model": "ALS",
+  "model_params": {
+    "factors": 16,
+    "iterations": 5
+  },
+  "seed": 0,
+  "seed_dependent": true,
+  "split": "test-positive",
+  "split_fingerprint": "c45dfb3f1b3fcebea9c1c0266646fcc0bfa9efd0c470992d066689fe0c2af614",
+  "stage": "smoke",
+  "summary": {
+    "hr@10": 0.35650887573964496,
+    "hr@20": 0.4881656804733728,
+    "ndcg@10": 0.1301186626275132,
+    "ndcg@20": 0.16271652563375513,
+    "precision@10": 0.045710059171597636,
+    "precision@20": 0.034467455621301775,
+    "recall@10": 0.2051522729407345,
+    "recall@20": 0.3137397858551705
+  },
+  "train_code_sha256": "0b67b69ffa2bd8d69b86ffe6f18a8e615b961a6e9672fe3b644fd37ac86962cc",
+  "train_stage": "smoke",
+  "train_task": "positive",
+  "training_settings": {
+    "data": {
+      "dedup": "keep_last",
+      "kcore": 5,
+      "n_tags": 20,
+      "preprocess_version": "pp2",
+      "test_year": 2022,
+      "train_years": [
+        2010,
+        2020
+      ],
+      "val_year": 2021
+    },
+    "model": "ALS",
+    "params": {
+      "factors": 16,
+      "iterations": 5
+    },
+    "train_task": "positive"
+  },
+  "training_signature": "528154a05d2181b092fe7f9834667617a1c5288b3d5e69dec6edd7033821559a",
+  "valid": true
+}

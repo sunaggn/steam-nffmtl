@@ -1,0 +1,22 @@
+2026-11-06 12:13:49,462 INFO run directory: /tmp/ex31/2026-11-06-121347-smoke/r/2026-11-06-121349-smoke-baselines-test-seed0
+2026-11-06 12:13:49,577 INFO Random      test-positive     ndcg@20=0.05467 recall@20=0.12694 users=676 (0s)
+2026-11-06 12:13:49,584 INFO Random      test-interaction  ndcg@20=0.05364 recall@20=0.11969 users=751 (0s)
+2026-11-06 12:13:49,584 INFO Random      review-label AUC=0.4771 on 1818 rows; fit 0s
+2026-11-06 12:13:49,688 INFO Popularity  test-positive     ndcg@20=0.23941 recall@20=0.40825 users=676 (0s)
+2026-11-06 12:13:49,697 INFO Popularity  test-interaction  ndcg@20=0.26081 recall@20=0.41710 users=751 (0s)
+2026-11-06 12:13:49,697 INFO Popularity  review-label AUC=0.4693 on 1818 rows; fit 0s
+2026-11-06 12:13:49,828 INFO TagKNN      test-positive     ndcg@20=0.09585 recall@20=0.23303 users=676 (0s)
+2026-11-06 12:13:49,835 INFO TagKNN      test-interaction  ndcg@20=0.08269 recall@20=0.19244 users=751 (0s)
+2026-11-06 12:13:49,835 INFO TagKNN      review-label AUC=0.6500 on 1818 rows; fit 0s
+2026-11-06 12:13:49,954 INFO ItemKNN-CF  test-positive     ndcg@20=0.28159 recall@20=0.48123 users=676 (0s)
+2026-11-06 12:13:49,962 INFO ItemKNN-CF  test-interaction  ndcg@20=0.28046 recall@20=0.45617 users=751 (0s)
+2026-11-06 12:13:49,962 INFO ItemKNN-CF  review-label AUC=0.5453 on 1818 rows; fit 0s
+2026-11-06 12:13:50,072 INFO BPR-MF      test-positive     ndcg@20=0.20987 recall@20=0.35338 users=676 (0s)
+2026-11-06 12:13:50,078 INFO BPR-MF      test-interaction  ndcg@20=0.23015 recall@20=0.36652 users=751 (0s)
+2026-11-06 12:13:50,078 INFO BPR-MF      review-label AUC=0.4661 on 1818 rows; fit 0s
+2026-11-06 12:13:50,194 INFO ALS         test-positive     ndcg@20=0.16272 recall@20=0.31374 users=676 (0s)
+2026-11-06 12:13:50,200 INFO ALS         test-interaction  ndcg@20=0.14291 recall@20=0.27136 users=751 (0s)
+2026-11-06 12:13:50,200 INFO ALS         review-label AUC=0.6165 on 1818 rows; fit 0s
+2026-11-06 12:13:50,313 INFO EASE        test-positive     ndcg@20=0.25155 recall@20=0.43150 users=676 (0s)
+2026-11-06 12:13:50,321 INFO EASE        test-interaction  ndcg@20=0.23938 recall@20=0.40416 users=751 (0s)
+2026-11-06 12:13:50,321 INFO EASE        review-label AUC=0.5857 on 1818 rows; fit 0s
