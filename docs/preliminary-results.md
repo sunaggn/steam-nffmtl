@@ -22,9 +22,13 @@ Three validation candidates were tried per tuned model. NFF-MTL candidates were 
 
 In this run ALS and ItemKNN-CF lead the ranking metrics. NFF-MTL leads observed-review label AUC, which measures a different task. The single-run results do not establish variability across seeds.
 
-## Full model, seed 1
+## Full model, seeds 1 and 2
 
-The second full-model run selected epoch ten on 2021 validation (NDCG@20=0.03634). Its separate 2022 evaluation reported positive-review NDCG@20=0.03284 and Recall@20=0.07287; the any-review sensitivity task gave NDCG@20=0.03042 and Recall@20=0.06615. Playtime log-MAE was 0.8935 (GlobalMean 1.2425, GameMedian 0.9101, UserGameMean 0.9116). The reported run directory is `runs_final/2026-11-12-110556-final-evaluate-test-full-seed1` in the author's Drive. These figures are transcribed from the author's Colab output; the run artifacts have not been imported here. Two seeds are still insufficient for a complete multi-seed comparison.
+The second full-model run selected epoch ten on 2021 validation (NDCG@20=0.03634). Its separate 2022 evaluation reported positive-review NDCG@20=0.03284 and Recall@20=0.07287; the any-review sensitivity task gave NDCG@20=0.03042 and Recall@20=0.06615. Playtime log-MAE was 0.8935 (GlobalMean 1.2425, GameMedian 0.9101, UserGameMean 0.9116). The reported run directory is `runs_final/2026-11-12-110556-final-evaluate-test-full-seed1` in the author's Drive. These figures are transcribed from the author's Colab output; the run artifacts have not been imported here.
+
+The seed-2 2022 evaluation reported positive-review NDCG@20=0.03513 and Recall@20=0.07629; the any-review sensitivity task gave NDCG@20=0.03221 and Recall@20=0.06855. Playtime log-MAE was 0.8913. The reported run directory is `runs_final/2026-11-12-144748-final-evaluate-test-full-seed2` in the author's Drive. The seed-2 training log and raw artifacts have not been imported here.
+
+Across these three full-model seeds, the positive-review NDCG@20 mean is 0.03353 (sample standard deviation 0.00139), Recall@20 mean is 0.07369 (sample standard deviation 0.00230), and playtime log-MAE mean is 0.89183 (sample standard deviation 0.00147). These are descriptive summaries of author-supplied logs, not paired comparisons with repeated baselines.
 
 Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425 for GlobalMean, 0.9101 for GameMedian and 0.9116 for UserGameMean. Lower log-MAE is better.
 
@@ -33,8 +37,8 @@ Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425
 - Colab preflight and all 63 package tests passed, with an OpenBLAS threading warning.
 - Probe, full-data two-epoch pilot and validation search completed.
 - Full model seed 0 trained and evaluated on 2022. Baseline seed 0 comparison completed.
-- Full model seed 1 trained and evaluated on 2022; its best validation NDCG@20 was 0.03634 at epoch ten. Its AUC and diversity results have not yet been imported.
-- Remaining seeds, no-content and single-task ablations, and the completed multi-seed comparison remain pending.
+- Full model seeds 1 and 2 trained and evaluated on 2022. Seed 1's best validation NDCG@20 was 0.03634 at epoch ten. Their AUC and diversity results have not yet been imported.
+- Full model seeds 3–4, no-content and single-task ablations, and the completed matched multi-seed comparison remain pending.
 - EASE is disabled in these experiments. NCF and LightGCN have not been implemented under this protocol.
 
 ## Reproduction cautions

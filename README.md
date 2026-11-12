@@ -10,7 +10,7 @@ for the protocol.
 
 **Status (v0.3.1):** revised after three independent code reviews (see `docs/CHANGES_AND_VERIFICATION.md`, sections 5–7).
 Real-data preparation, validation tuning, and a first final comparison have now completed on Colab L4.
-The full model has completed training and 2022 evaluation for seeds 0 and 1. The seed-0 baseline comparison and both full-model results are available in
+The full model has completed training and 2022 evaluation for seeds 0, 1 and 2. The seed-0 baseline comparison and all three full-model results are available in
 [the preliminary results summary](docs/preliminary-results.md). The remaining seeds
 and ablations are pending. Multi-seed conclusions and the manuscript results are still in progress.
 The bundled `examples/synthetic-smoke/` files are synthetic package examples and carry no research claims. The pipeline is *leakage-controlled*, not leakage-free: two assumptions about
