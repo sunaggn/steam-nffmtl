@@ -1,6 +1,6 @@
 # Preliminary real-data results
 
-Status recorded on 12 November 2026. These values come from the completed Colab logs and the comparison table supplied by the author. The raw run artifacts have not yet been bundled in this repository. This summary is a partial experiment report, not a completed multi-seed benchmark.
+Status recorded on 15 November 2026. These values come from the completed Colab logs and the comparison table supplied by the author. The raw run artifacts have not yet been bundled in this repository. The full model now has five evaluated seeds, but repeated baselines and ablations are still pending.
 
 ## Protocol
 
@@ -22,13 +22,25 @@ Three validation candidates were tried per tuned model. NFF-MTL candidates were 
 
 In this run ALS and ItemKNN-CF lead the ranking metrics. NFF-MTL leads observed-review label AUC, which measures a different task. The single-run results do not establish variability across seeds.
 
-## Full model, seeds 1 and 2
+## Full model, five seeds
 
 The second full-model run selected epoch ten on 2021 validation (NDCG@20=0.03634). Its separate 2022 evaluation reported positive-review NDCG@20=0.03284 and Recall@20=0.07287; the any-review sensitivity task gave NDCG@20=0.03042 and Recall@20=0.06615. Playtime log-MAE was 0.8935 (GlobalMean 1.2425, GameMedian 0.9101, UserGameMean 0.9116). The reported run directory is `runs_final/2026-11-12-110556-final-evaluate-test-full-seed1` in the author's Drive. These figures are transcribed from the author's Colab output; the run artifacts have not been imported here.
 
 The seed-2 2022 evaluation reported positive-review NDCG@20=0.03513 and Recall@20=0.07629; the any-review sensitivity task gave NDCG@20=0.03221 and Recall@20=0.06855. Playtime log-MAE was 0.8913. The reported run directory is `runs_final/2026-11-12-144748-final-evaluate-test-full-seed2` in the author's Drive. The seed-2 training log and raw artifacts have not been imported here.
 
-Across these three full-model seeds, the positive-review NDCG@20 mean is 0.03353 (sample standard deviation 0.00139), Recall@20 mean is 0.07369 (sample standard deviation 0.00230), and playtime log-MAE mean is 0.89183 (sample standard deviation 0.00147). These are descriptive summaries of author-supplied logs, not paired comparisons with repeated baselines.
+The supplied notebook also records seed 3, selected at epoch eight, with 2022 positive-review NDCG@20=0.03252, Recall@20=0.07300 and playtime log-MAE=0.8836. Seed 4 selected epoch ten, with NDCG@20=0.03283, Recall@20=0.07310 and log-MAE=0.8980. Their evaluation run directories are `runs_final/2026-11-13-121946-final-evaluate-test-full-seed3` and `runs_final/2026-11-13-135138-final-evaluate-test-full-seed4` in the author's Drive.
+
+| Full-model seed | Positive-review NDCG@20 | Positive-review Recall@20 | Playtime log-MAE |
+| ---: | ---: | ---: | ---: |
+| 0 | 0.03261 | 0.07192 | 0.8907 |
+| 1 | 0.03284 | 0.07287 | 0.8935 |
+| 2 | 0.03513 | 0.07629 | 0.8913 |
+| 3 | 0.03252 | 0.07300 | 0.8836 |
+| 4 | 0.03283 | 0.07310 | 0.8980 |
+| Mean | 0.03319 | 0.07344 | 0.89142 |
+| Sample SD | 0.00110 | 0.00166 | 0.00523 |
+
+These are descriptive summaries of author-supplied logs, not paired comparisons with repeated baselines. A later attempted seed-2 training in the notebook shows only a partial run; it is excluded from this table, which uses the completed 12 November seed-2 checkpoint.
 
 Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425 for GlobalMean, 0.9101 for GameMedian and 0.9116 for UserGameMean. Lower log-MAE is better.
 
@@ -36,9 +48,8 @@ Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425
 
 - Colab preflight and all 63 package tests passed, with an OpenBLAS threading warning.
 - Probe, full-data two-epoch pilot and validation search completed.
-- Full model seed 0 trained and evaluated on 2022. Baseline seed 0 comparison completed.
-- Full model seeds 1 and 2 trained and evaluated on 2022. Seed 1's best validation NDCG@20 was 0.03634 at epoch ten. Their AUC and diversity results have not yet been imported.
-- Full model seeds 3–4, no-content and single-task ablations, and the completed matched multi-seed comparison remain pending.
+- Full model seeds 0–4 trained and evaluated on 2022. Baseline seed 0 comparison completed. Full-model seed 1–4 AUC and diversity results have not yet been imported.
+- Repeated stochastic baselines, no-content and single-task ablations, and the completed matched multi-seed comparison remain pending. The supplied notebook's `no_content` cell failed with `FINAL_CFG` undefined before training began.
 - EASE is disabled in these experiments. NCF and LightGCN have not been implemented under this protocol.
 
 ## Reproduction cautions
