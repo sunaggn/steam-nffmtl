@@ -1,6 +1,6 @@
 # Preliminary real-data results
 
-Status recorded on 15 November 2026. These values come from the completed Colab logs and the comparison table supplied by the author. The raw run artifacts have not yet been bundled in this repository. The full model now has five evaluated seeds, but repeated baselines and ablations are still pending.
+Status recorded on 15 November 2026. These values come from the completed Colab logs and the comparison table supplied by the author. The raw run artifacts have not yet been bundled in this repository. The full model now has five evaluated seeds, but repeated baselines and most ablation runs are still pending.
 
 ## Protocol
 
@@ -42,6 +42,17 @@ The supplied notebook also records seed 3, selected at epoch eight, with 2022 po
 
 These are descriptive summaries of author-supplied logs, not paired comparisons with repeated baselines. A later attempted seed-2 training in the notebook shows only a partial run; it is excluded from this table, which uses the completed 12 November seed-2 checkpoint.
 
+## First no-content ablation, seed 1
+
+The no-content variant removes the tag/content branch while retaining the same training task. It selected epoch ten on validation and was evaluated once on 2022. On the same seed, the full and no-content results were:
+
+| Variant, seed 1 | Positive-review NDCG@20 | Positive-review Recall@20 | Playtime log-MAE |
+| --- | ---: | ---: | ---: |
+| Full | 0.03284 | 0.07287 | 0.8935 |
+| No content | 0.03140 | 0.07101 | 0.8902 |
+
+The ranking difference is 0.00144 NDCG@20 and 0.00186 Recall@20 in favor of the full model. The no-content variant has slightly lower playtime error in this run. One paired seed does not establish a stable contribution. The author reported `runs_final/2026-11-15-092049-final-train-no_content-seed1` and `runs_final/2026-11-15-103653-final-evaluate-test-no_content-seed1`; the raw artifacts have not been imported.
+
 Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425 for GlobalMean, 0.9101 for GameMedian and 0.9116 for UserGameMean. Lower log-MAE is better.
 
 ## Completed and pending
@@ -49,7 +60,7 @@ Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425
 - Colab preflight and all 63 package tests passed, with an OpenBLAS threading warning.
 - Probe, full-data two-epoch pilot and validation search completed.
 - Full model seeds 0–4 trained and evaluated on 2022. Baseline seed 0 comparison completed. Full-model seed 1–4 AUC and diversity results have not yet been imported.
-- Repeated stochastic baselines, no-content and single-task ablations, and the completed matched multi-seed comparison remain pending. The supplied notebook's `no_content` cell failed with `FINAL_CFG` undefined before training began.
+- No-content seed 1 trained and evaluated on 2022. No-content seeds 0, 2–4, all single-task seeds, repeated stochastic baselines, and the completed matched multi-seed comparison remain pending.
 - EASE is disabled in these experiments. NCF and LightGCN have not been implemented under this protocol.
 
 ## Reproduction cautions
