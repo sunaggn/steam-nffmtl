@@ -30,6 +30,12 @@ On Windows, if NumPy/PyTorch abort natively inside MKL/OpenMP, run the tests wit
 
 On Google Colab use `notebooks/NFF_MTL_Corrected_Colab.ipynb` (it installs `requirements-colab.txt`).
 
+`notebooks/NFF_MTL_Corrected_Colab_executed.ipynb` is the author's 16 November 2026
+Colab snapshot, including added experiment cells and saved outputs. It is a historical
+execution record: several cells rerun completed training or one-time test evaluations,
+and one troubleshooting cell stops training processes. Do not use "Run all" on this
+snapshot. The original driver above remains the starting point for a new run.
+
 ## Data
 
 Download `recommendations.csv` and `games_metadata.json` from the Kaggle dataset
