@@ -1,6 +1,6 @@
 # Preliminary real-data results
 
-Status recorded on 15 November 2026. These values come from the completed Colab logs and the comparison table supplied by the author. The raw run artifacts have not yet been bundled in this repository. The full model now has five evaluated seeds, but repeated baselines and most ablation runs are still pending.
+Status recorded on 17 November 2026. These values come from the completed Colab logs and the comparison table supplied by the author. The raw run artifacts have not yet been bundled in this repository. The full model and no-content variant now each have five evaluated seeds; repeated baselines and the single-task ablation are still pending.
 
 ## Protocol
 
@@ -42,9 +42,9 @@ The supplied notebook also records seed 3, selected at epoch eight, with 2022 po
 
 These are descriptive summaries of author-supplied logs, not paired comparisons with repeated baselines. A later attempted seed-2 training in the notebook shows only a partial run; it is excluded from this table, which uses the completed 12 November seed-2 checkpoint.
 
-## No-content ablation, seeds 0–3
+## No-content ablation, seeds 0–4
 
-The no-content variant removes the tag/content branch while retaining the same training task. Seeds 0–3 were evaluated once each on 2022. The matched results were:
+The no-content variant removes the tag/content branch while retaining the same training task. Seeds 0–4 were evaluated once each on 2022. The matched results were:
 
 | Seed | Variant | Positive-review NDCG@20 | Positive-review Recall@20 | Playtime log-MAE |
 | ---: | --- | ---: | ---: | ---: |
@@ -56,8 +56,12 @@ The no-content variant removes the tag/content branch while retaining the same t
 | 2 | No content | 0.03036 | 0.06827 | 0.8901 |
 | 3 | Full | 0.03252 | 0.07300 | 0.8836 |
 | 3 | No content | 0.02887 | 0.06489 | 0.8679 |
+| 4 | Full | 0.03283 | 0.07310 | 0.8980 |
+| 4 | No content | 0.03280 | 0.07392 | 0.8911 |
+| Mean | Full | 0.03319 | 0.07344 | 0.89142 |
+| Mean | No content | 0.03052 | 0.06899 | 0.88452 |
 
-In all four paired seeds the full model ranks positive-review games better, while the no-content model has lower playtime error. The NDCG@20 differences are 0.00343, 0.00144, 0.00477 and 0.00365 for seeds 0–3. This is preliminary until the planned five matched seeds are complete. Seed 3 stopped training after epoch seven and selected the best validation checkpoint from epoch four. The author reported seed-0 run directories `runs_final/2026-11-13-175046-final-train-no_content-seed0` and `runs_final/2026-11-13-190729-final-evaluate-test-no_content-seed0`, seed-1 run directories `runs_final/2026-11-15-092049-final-train-no_content-seed1` and `runs_final/2026-11-15-103653-final-evaluate-test-no_content-seed1`, seed-2 run directories `runs_final/2026-11-15-115939-final-train-no_content-seed2` and `runs_final/2026-11-15-131526-final-evaluate-test-no_content-seed2`, and seed-3 run directories `runs_final/2026-11-16-084447-final-train-no_content-seed3` and `runs_final/2026-11-16-094010-final-evaluate-test-no_content-seed3`; the raw artifacts have not been imported.
+The full model's positive-review NDCG@20 is higher in all five matched seeds, but seed 4 is nearly tied (0.03283 versus 0.03280). The paired mean NDCG@20 difference is 0.00266 in favor of the full model. Its Recall@20 is higher in four of five seeds; no-content is slightly higher in seed 4 (0.07392 versus 0.07310). No-content has lower playtime log-MAE in all five seeds, with a paired mean difference of 0.00690. These are descriptive results from five seeds, not a significance claim. Seed 3 stopped training after epoch seven and selected the best validation checkpoint from epoch four. The author reported seed-0 run directories `runs_final/2026-11-13-175046-final-train-no_content-seed0` and `runs_final/2026-11-13-190729-final-evaluate-test-no_content-seed0`, seed-1 run directories `runs_final/2026-11-15-092049-final-train-no_content-seed1` and `runs_final/2026-11-15-103653-final-evaluate-test-no_content-seed1`, seed-2 run directories `runs_final/2026-11-15-115939-final-train-no_content-seed2` and `runs_final/2026-11-15-131526-final-evaluate-test-no_content-seed2`, seed-3 run directories `runs_final/2026-11-16-084447-final-train-no_content-seed3` and `runs_final/2026-11-16-094010-final-evaluate-test-no_content-seed3`, and seed-4 run directories `runs_final/2026-11-16-112817-final-train-no_content-seed4` and `runs_final/2026-11-16-124644-final-evaluate-test-no_content-seed4`; the raw artifacts have not been imported.
 
 Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425 for GlobalMean, 0.9101 for GameMedian and 0.9116 for UserGameMean. Lower log-MAE is better.
 
@@ -66,7 +70,7 @@ Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425
 - Colab preflight and all 63 package tests passed, with an OpenBLAS threading warning.
 - Probe, full-data two-epoch pilot and validation search completed.
 - Full model seeds 0–4 trained and evaluated on 2022. Baseline seed 0 comparison completed. Full-model seed 1–4 AUC and diversity results have not yet been imported.
-- No-content seeds 0–3 trained and evaluated on 2022. No-content seed 4, all single-task seeds, repeated stochastic baselines, and the completed matched multi-seed comparison remain pending.
+- No-content seeds 0–4 trained and evaluated on 2022. All single-task seeds, repeated stochastic baselines, and a consolidated comparison using the raw run artifacts remain pending.
 - EASE is disabled in these experiments. NCF and LightGCN have not been implemented under this protocol.
 
 ## Reproduction cautions
