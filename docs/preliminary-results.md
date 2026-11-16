@@ -42,9 +42,9 @@ The supplied notebook also records seed 3, selected at epoch eight, with 2022 po
 
 These are descriptive summaries of author-supplied logs, not paired comparisons with repeated baselines. A later attempted seed-2 training in the notebook shows only a partial run; it is excluded from this table, which uses the completed 12 November seed-2 checkpoint.
 
-## No-content ablation, seeds 0–2
+## No-content ablation, seeds 0–3
 
-The no-content variant removes the tag/content branch while retaining the same training task. Seeds 0–2 were evaluated once each on 2022. The matched results were:
+The no-content variant removes the tag/content branch while retaining the same training task. Seeds 0–3 were evaluated once each on 2022. The matched results were:
 
 | Seed | Variant | Positive-review NDCG@20 | Positive-review Recall@20 | Playtime log-MAE |
 | ---: | --- | ---: | ---: | ---: |
@@ -54,8 +54,10 @@ The no-content variant removes the tag/content branch while retaining the same t
 | 1 | No content | 0.03140 | 0.07101 | 0.8902 |
 | 2 | Full | 0.03513 | 0.07629 | 0.8913 |
 | 2 | No content | 0.03036 | 0.06827 | 0.8901 |
+| 3 | Full | 0.03252 | 0.07300 | 0.8836 |
+| 3 | No content | 0.02887 | 0.06489 | 0.8679 |
 
-In all three paired seeds the full model ranks positive-review games better, while the no-content model has slightly lower playtime error. The NDCG@20 differences are 0.00343, 0.00144 and 0.00477 for seeds 0, 1 and 2. This is preliminary until the planned five matched seeds are complete. The author reported seed-0 run directories `runs_final/2026-11-13-175046-final-train-no_content-seed0` and `runs_final/2026-11-13-190729-final-evaluate-test-no_content-seed0`, seed-1 run directories `runs_final/2026-11-15-092049-final-train-no_content-seed1` and `runs_final/2026-11-15-103653-final-evaluate-test-no_content-seed1`, and seed-2 run directories `runs_final/2026-11-15-115939-final-train-no_content-seed2` and `runs_final/2026-11-15-131526-final-evaluate-test-no_content-seed2`; the raw artifacts have not been imported.
+In all four paired seeds the full model ranks positive-review games better, while the no-content model has lower playtime error. The NDCG@20 differences are 0.00343, 0.00144, 0.00477 and 0.00365 for seeds 0–3. This is preliminary until the planned five matched seeds are complete. Seed 3 stopped training after epoch seven and selected the best validation checkpoint from epoch four. The author reported seed-0 run directories `runs_final/2026-11-13-175046-final-train-no_content-seed0` and `runs_final/2026-11-13-190729-final-evaluate-test-no_content-seed0`, seed-1 run directories `runs_final/2026-11-15-092049-final-train-no_content-seed1` and `runs_final/2026-11-15-103653-final-evaluate-test-no_content-seed1`, seed-2 run directories `runs_final/2026-11-15-115939-final-train-no_content-seed2` and `runs_final/2026-11-15-131526-final-evaluate-test-no_content-seed2`, and seed-3 run directories `runs_final/2026-11-16-084447-final-train-no_content-seed3` and `runs_final/2026-11-16-094010-final-evaluate-test-no_content-seed3`; the raw artifacts have not been imported.
 
 Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425 for GlobalMean, 0.9101 for GameMedian and 0.9116 for UserGameMean. Lower log-MAE is better.
 
@@ -64,7 +66,7 @@ Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425
 - Colab preflight and all 63 package tests passed, with an OpenBLAS threading warning.
 - Probe, full-data two-epoch pilot and validation search completed.
 - Full model seeds 0–4 trained and evaluated on 2022. Baseline seed 0 comparison completed. Full-model seed 1–4 AUC and diversity results have not yet been imported.
-- No-content seeds 0–2 trained and evaluated on 2022. No-content seeds 3–4, all single-task seeds, repeated stochastic baselines, and the completed matched multi-seed comparison remain pending.
+- No-content seeds 0–3 trained and evaluated on 2022. No-content seed 4, all single-task seeds, repeated stochastic baselines, and the completed matched multi-seed comparison remain pending.
 - EASE is disabled in these experiments. NCF and LightGCN have not been implemented under this protocol.
 
 ## Reproduction cautions
