@@ -65,12 +65,16 @@ The full model's positive-review NDCG@20 is higher in all five matched seeds, bu
 
 Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425 for GlobalMean, 0.9101 for GameMedian and 0.9116 for UserGameMean. Lower log-MAE is better.
 
+## Single-task ablation, seed 0
+
+The live Colab notebook now records one completed single-task run. It selected epoch 10 on 2021 validation (positive-review NDCG@20=0.04288). Its 2022 positive-review NDCG@20 was 0.03548 and Recall@20 was 0.07411; the any-review sensitivity scores were NDCG@20=0.03285 and Recall@20=0.06759. The same-seed full model scored 0.03261 and 0.07192 on the primary positive-review ranking task. This one-seed observation is not a multi-seed ablation conclusion. The single-task run has no playtime prediction result because that auxiliary task is disabled. The author’s Drive records are `runs_final/2026-11-17-095111-final-train-single_task-seed0` and `runs_final/2026-11-17-110731-final-evaluate-test-single_task-seed0`; the raw artifacts have not been imported.
+
 ## Completed and pending
 
 - Colab preflight and all 63 package tests passed, with an OpenBLAS threading warning.
 - Probe, full-data two-epoch pilot and validation search completed.
 - Full model seeds 0–4 trained and evaluated on 2022. Baseline seed 0 comparison completed. Full-model seed 1–4 AUC and diversity results have not yet been imported.
-- No-content seeds 0–4 trained and evaluated on 2022. All single-task seeds, repeated stochastic baselines, and a consolidated comparison using the raw run artifacts remain pending.
+- No-content seeds 0–4 and single-task seed 0 trained and evaluated on 2022. Single-task seeds 1–4, repeated stochastic baselines, and a consolidated comparison using the raw run artifacts remain pending.
 - EASE is disabled in these experiments. NCF and LightGCN have not been implemented under this protocol.
 
 ## Reproduction cautions
