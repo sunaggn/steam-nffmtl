@@ -36,6 +36,8 @@ execution record: several cells rerun completed training or one-time test evalua
 and one troubleshooting cell stops training processes. Do not use "Run all" on this
 snapshot. The original driver above remains the starting point for a new run.
 
+`notebooks/NFF_MTL_Final_Analysis_v0.3.1_clean.ipynb` is the author's cleaned final-run ledger and analysis notebook. With its default switches it reads the existing 2022 run folders, reports comparisons and playtime metrics, and exports summary CSVs to Drive; it does not train or evaluate models. The optional comparison rerun, hours audit, and folder marking switches are off by default.
+
 ## Data
 
 Download `recommendations.csv` and `games_metadata.json` from the Kaggle dataset
