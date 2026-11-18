@@ -40,6 +40,8 @@ snapshot. The original driver above remains the starting point for a new run.
 
 `notebooks/NFF_MTL_Final_Analysis_v0.3.1_executed.ipynb` preserves the author's later notebook with its saved outputs: the 21-folder ledger, both comparison tables, paired statistics, per-seed values, playtime summary and hours audit. It is a historical record. Its saved source has `MARK_ORPHANS = True`, and that execution renamed one unused partial training folder. Use the clean notebook above for another analysis run rather than running all cells in this executed snapshot.
 
+`scripts/check_hours.py` contains the dataset-hours audit. Its `no_values_above_1000h` field replaces the misleading flag displayed in the historical notebook. To regenerate the Drive report, upload this script to `MyDrive/steamRS/`, set `RERUN_AUDIT = True` in the clean analysis notebook, and run its hours-audit cell. The full-data rerun has not yet been supplied.
+
 ## Data
 
 Download `recommendations.csv` and `games_metadata.json` from the Kaggle dataset
