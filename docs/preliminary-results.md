@@ -106,6 +106,10 @@ The 21-directory positive-review comparison is `runs_final/2026-11-18-144556-fin
 
 The 21-directory any-review sensitivity comparison is `runs_final/2026-11-18-145125-final-compare`. Its NDCG@20 means are EASE 0.05948 (one run), ALS 0.05136 (five), ItemKNN-CF 0.04695 (one), single-task 0.03337 (five), full NFF-MTL 0.03055 (five), and no-content 0.02809 (five). The author-supplied [exact paired statistics](results/2026-11-18-test-interaction-comparison_stats.json) confirm that the Holm-adjusted seed-level NDCG@20 comparisons of full versus single-task (p=0.0672498, mean difference −0.00281883) and full versus no-content (p=0.0689021, mean difference +0.00246276) do not pass the 0.05 threshold. Full trails EASE (p=0.00000225, one fixed EASE result) and ALS (p=0.00000690, five matched seeds). This is a secondary relevance definition; the confidence intervals in the file are unadjusted seed-level intervals.
 
+### Saved playtime and hours-audit outputs
+
+The author's [executed analysis notebook](../notebooks/NFF_MTL_Final_Analysis_v0.3.1_executed.ipynb) reports five-seed mean playtime log-MAE of 0.8914 (SD 0.0052) for full NFF-MTL and 0.8845 (SD 0.0098) for no-content; lower is better. It also displays an hours audit over 41,154,794 source rows: maximum recorded hours 1000.0, 26 rows at or above 1000 hours, and `consistent_with_comma_truncation=false`. In a 14-day post-release subset, the audit flags 698,527 of 3,703,393 reviews (18.86%) as having more recorded playtime than elapsed time permits. These are transcribed audit outputs, not an independently verified data-quality finding: `check_hours.py`, the report file, and the raw rows have not been imported. The timing and meaning of recorded hours and release dates need investigation before a causal explanation is given.
+
 ## Completed and pending
 
 - Colab preflight and all 63 package tests passed, with an OpenBLAS threading warning.

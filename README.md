@@ -38,6 +38,8 @@ snapshot. The original driver above remains the starting point for a new run.
 
 `notebooks/NFF_MTL_Final_Analysis_v0.3.1_clean.ipynb` is the author's cleaned final-run ledger and analysis notebook. With its default switches it reads the existing 2022 run folders, reports comparisons and playtime metrics, and exports summary CSVs to Drive; it does not train or evaluate models. The optional comparison rerun, hours audit, and folder marking switches are off by default.
 
+`notebooks/NFF_MTL_Final_Analysis_v0.3.1_executed.ipynb` preserves the author's later notebook with its saved outputs: the 21-folder ledger, both comparison tables, paired statistics, per-seed values, playtime summary and hours audit. It is a historical record. Its saved source has `MARK_ORPHANS = True`, and that execution renamed one unused partial training folder. Use the clean notebook above for another analysis run rather than running all cells in this executed snapshot.
+
 ## Data
 
 Download `recommendations.csv` and `games_metadata.json` from the Kaggle dataset
