@@ -1,6 +1,6 @@
 # Preliminary real-data results
 
-Status recorded on 17 November 2026. These values come from the completed Colab logs and the comparison table supplied by the author. The raw run artifacts have not yet been bundled in this repository. The full model and no-content variant now each have five evaluated seeds; repeated baselines and the single-task ablation are still pending.
+Status recorded on 18 November 2026. These values come from the completed Colab logs and the comparison table supplied by the author. The raw run artifacts have not yet been bundled in this repository. The full model, no-content variant and single-task variant now each have five evaluated seeds. Repeated stochastic baselines are complete; the consolidated comparison is pending.
 
 ## Protocol
 
@@ -74,8 +74,9 @@ The live Colab notebook now records one completed single-task run. It selected e
 - Colab preflight and all 63 package tests passed, with an OpenBLAS threading warning.
 - Probe, full-data two-epoch pilot and validation search completed.
 - Full model seeds 0–4 trained and evaluated on 2022. Baseline seed 0 comparison completed. Full-model seed 1–4 AUC and diversity results have not yet been imported.
-- No-content seeds 0–4 and single-task seed 0 trained and evaluated on 2022. Single-task seeds 1–4, repeated stochastic baselines, and a consolidated comparison using the raw run artifacts remain pending.
-- EASE is disabled in these experiments. NCF and LightGCN have not been implemented under this protocol.
+- No-content and single-task seeds 0–4 trained and evaluated on 2022. Single-task seed 1 reported positive-review NDCG@20=0.03688 and Recall@20=0.07767; seeds 3 and 4 reported 0.03746/0.07947 and 0.03666/0.07839. Seed 2 completion was supplied, but its metrics and raw artifacts have not been imported here. The five-seed single-task summary remains pending.
+- Repeated Random, BPR-MF and ALS baseline runs for seeds 1–4 completed. Seed 4 reported positive-review NDCG@20 of 0.00038, 0.02994 and 0.05262, respectively. A consolidated comparison using the raw run artifacts remains pending.
+- An exploratory EASE search on 2021 validation completed three candidates and selected l2=100.0. One subsequent 2022 EASE attempt was interrupted without result files; a second attempt has no confirmed result in the supplied notebook. EASE is excluded from reported test comparisons. NCF and LightGCN have not been implemented under this protocol.
 
 ## Reproduction cautions
 
