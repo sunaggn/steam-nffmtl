@@ -85,7 +85,7 @@ The consolidated `test-positive` comparison completed in `runs_final/2026-11-18-
 | TagKNN | 1 | 0.00663 | 0.01232 | 0.50358 |
 | Random | 5 | 0.00038 | 0.00086 | 0.50016 |
 
-ALS leads both primary ranking metrics. The single-task variant has higher mean ranking metrics than the full multi-task model; the full model has higher mean ranking metrics than no-content. ItemKNN-CF, Popularity and TagKNN have one reported run; their run counts should be kept visible alongside five-seed means. AUC measures the observed-review label task and is not a ranking metric. The EASE test result is unconfirmed and excluded.
+ALS leads both primary ranking metrics in the original 20-directory comparison. The single-task variant has higher mean ranking metrics than the full multi-task model; the full model has higher mean ranking metrics than no-content. ItemKNN-CF, Popularity and TagKNN have one reported run; their run counts should be kept visible alongside five-seed means. AUC measures the observed-review label task and is not a ranking metric. EASE was added later as an exploratory extension below.
 
 The author-supplied [paired statistics](results/2026-11-18-comparison_stats.json) use five matched seeds and a paired t-test for seed-level differences. Holm correction is applied across model comparisons separately for each metric. Differences below are **full NFF-MTL minus the named model**; confidence intervals are unadjusted 95% seed-level t intervals, while the p-values are Holm adjusted.
 
@@ -98,6 +98,14 @@ The author-supplied [paired statistics](results/2026-11-18-comparison_stats.json
 
 Under this test, the NDCG@20 differences in these four comparisons pass the 0.05 adjusted threshold. The recall differences between full and the two ablations do not. With only five seeds, the t-test assumptions and uncertainty estimates deserve caution. The single-run ItemKNN-CF result is treated as a fixed deterministic comparator across the five full-model seeds; it does not estimate ItemKNN training variability. User-level tests in the same file describe user-sampling uncertainty for one chosen seed and must not be interpreted as five-seed evidence. The file contains aggregate statistics, not per-user records.
 
+### Exploratory EASE extension and any-review sensitivity
+
+After the other 2022 results were observed, an EASE validation search tested three candidates and selected `l2=100.0`. One completed EASE test run (`runs_final/2026-11-18-142502-final-baselines-test-seed0`) scored NDCG@20=0.06153 and Recall@20=0.12603 for positive-review relevance, and 0.05948/0.12042 for any-review relevance. EASE appears once; its addition is exploratory and separate from the original 20-directory comparison.
+
+The 21-directory positive-review comparison is `runs_final/2026-11-18-144556-final-compare`. EASE leads its NDCG@20 table, ahead of ALS (five-seed mean 0.05275), ItemKNN-CF (single run 0.04875), and full NFF-MTL (five-seed mean 0.03319). The supplied rounded Holm-adjusted seed-level NDCG@20 p-values for full versus no-content and full versus single-task remain 0.0413 after adding EASE; the exact statistics file for this expanded comparison has not been imported.
+
+The 21-directory any-review sensitivity comparison is `runs_final/2026-11-18-145125-final-compare`. Its NDCG@20 means are EASE 0.05948 (one run), ALS 0.05136 (five), ItemKNN-CF 0.04695 (one), single-task 0.03337 (five), full NFF-MTL 0.03055 (five), and no-content 0.02809 (five). In the supplied rounded Holm-adjusted seed-level results, full versus single-task (p=0.0672) and full versus no-content (p=0.0689) do not pass the 0.05 threshold. This is a secondary relevance definition. The exact statistics file for this comparison has not been imported.
+
 ## Completed and pending
 
 - Colab preflight and all 63 package tests passed, with an OpenBLAS threading warning.
@@ -105,7 +113,7 @@ Under this test, the NDCG@20 differences in these four comparisons pass the 0.05
 - Full model seeds 0–4 trained and evaluated on 2022. Baseline seed 0 comparison completed. Full-model seed 1–4 AUC and diversity results have not yet been imported.
 - No-content and single-task seeds 0–4 trained and evaluated on 2022. Single-task seed 1 reported positive-review NDCG@20=0.03688 and Recall@20=0.07767; seeds 3 and 4 reported 0.03746/0.07947 and 0.03666/0.07839. Seed 2 completion was supplied, but its individual metrics and raw artifacts have not been imported here; the five-seed aggregate appears above.
 - Repeated Random, BPR-MF and ALS baseline runs for seeds 1–4 completed. Seed 4 reported positive-review NDCG@20 of 0.00038, 0.02994 and 0.05262, respectively. The consolidated comparison and aggregate paired-statistics file are included; the per-run raw artifacts remain in the author's Drive.
-- An exploratory EASE search on 2021 validation completed three candidates and selected l2=100.0. One subsequent 2022 EASE attempt was interrupted without result files; a second attempt has no confirmed result in the supplied notebook. EASE is excluded from reported test comparisons. NCF and LightGCN have not been implemented under this protocol.
+- An exploratory EASE search on 2021 validation completed three candidates and selected l2=100.0. A later 2022 test run completed and is reported separately above. NCF and LightGCN have not been implemented under this protocol.
 
 ## Reproduction cautions
 

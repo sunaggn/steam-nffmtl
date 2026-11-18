@@ -37,7 +37,7 @@ for s in [1, 2, 3, 4]:
 
 ## Exploratory EASE attempt
 
-The validation search selected `l2=100.0`. One later test attempt was interrupted without result files; a second has no confirmed result in the supplied notebook. EASE test metrics are not reported.
+The validation search selected `l2=100.0`. Earlier test attempts did not produce a confirmed complete result. A later CPU test run completed in `runs_final/2026-11-18-142502-final-baselines-test-seed0`; see the results summary.
 
 ```python
 ease_tune = cli('tune', '--config', 'configs/default.yaml', '--models', 'ease', '--set', 'baselines.ease.enabled=true', 'tuning.n_trials=3')
@@ -61,3 +61,27 @@ A second EASE test attempt used the selected `l2=100.0`:
 ```python
 ease_test = cli('baselines', '--config', FINAL_CFG, '--split', 'test', '--seed', 0, '--only', 'EASE', '--set', 'baselines.ease.enabled=true', 'baselines.ease.l2=100.0', 'train.max_epochs=10')
 ```
+
+## Completed EASE and 21-directory comparisons
+
+The completed EASE test was run on CPU with the same selected `l2`:
+
+```python
+ease_test = cli('baselines', '--config', FINAL_CFG, '--split', 'test', '--seed', 0, '--only', 'EASE', '--set', 'baselines.ease.enabled=true', 'baselines.ease.l2=100.0', 'baselines.ease.device=cpu', 'train.max_epochs=10')
+```
+
+The live notebook then compared the completed evaluation folders for both relevance definitions. The code below is a historical record; its glob relies on the author's Drive layout and should be checked before reuse.
+
+```python
+RF = DATA_DIR / 'runs_final'
+dirs = [p for p in sorted(RF.glob('*-final-evaluate-test-*')) + sorted(RF.glob('*-final-baselines-test-seed*')) if 'INTERRUPTED' not in p.name]
+print(len(dirs), 'klasör (beklenen 21)')
+for split in ['test-positive', 'test-interaction']:
+    C = Path(cli('compare', '--config', FINAL_CFG, '--reference', 'NFF-MTL', '--split', split, '--results', *dirs, '--set', 'train.max_epochs=10'))
+    st = json.loads((C / 'comparison_stats.json').read_text()); print(split, '→', C.name)
+    for k, v in st['seed_level'].items():
+        if 'ndcg@20' in k:
+            m = k.split(' vs ')[1].split(' |')[0]; print('  ', m, '| fark', round(v['mean_diff'], 5), '| Holm p', round(st['holm_seed_level']['ndcg@20'][m], 4))
+```
+
+The run directories were `2026-11-18-144556-final-compare` for positive reviews and `2026-11-18-145125-final-compare` for any review.

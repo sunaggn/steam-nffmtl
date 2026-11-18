@@ -12,6 +12,7 @@ for the protocol.
 Real-data preparation, validation tuning, and the consolidated 2022 comparison have completed on Colab L4.
 The full model, no-content and single-task variants have completed training and evaluation for seeds 0–4. Repeated stochastic baselines for seeds 1–4 have also completed; see
 [the preliminary results summary](docs/preliminary-results.md). The manuscript results are still in progress.
+An exploratory EASE test and 21-directory comparisons for positive-review and any-review relevance have also completed. EASE was added after the other 2022 results had been observed, so its result is reported separately from the original comparison.
 The bundled `examples/synthetic-smoke/` files are synthetic package examples and carry no research claims. The pipeline is *leakage-controlled*, not leakage-free: two assumptions about
 the source data remain unverified (see `unverified_assumptions` in every data card).
 
