@@ -9,10 +9,9 @@ The code replaces the evaluation and baseline logic of `NFF_MTL_Complete_extende
 for the protocol.
 
 **Status (v0.3.1):** revised after three independent code reviews (see `docs/CHANGES_AND_VERIFICATION.md`, sections 5–7).
-Real-data preparation, validation tuning, and a first final comparison have now completed on Colab L4.
-The full model has completed training and 2022 evaluation for seeds 0–4. The seed-0 baseline comparison and all five full-model results are available in
-[the preliminary results summary](docs/preliminary-results.md). No-content and single-task seeds 0–4 have also completed.
-Repeated stochastic baselines for seeds 1–4 have completed. The consolidated comparison and manuscript results are still in progress.
+Real-data preparation, validation tuning, and the consolidated 2022 comparison have completed on Colab L4.
+The full model, no-content and single-task variants have completed training and evaluation for seeds 0–4. Repeated stochastic baselines for seeds 1–4 have also completed; see
+[the preliminary results summary](docs/preliminary-results.md). The manuscript results are still in progress.
 The bundled `examples/synthetic-smoke/` files are synthetic package examples and carry no research claims. The pipeline is *leakage-controlled*, not leakage-free: two assumptions about
 the source data remain unverified (see `unverified_assumptions` in every data card).
 

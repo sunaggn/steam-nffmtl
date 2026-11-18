@@ -1,6 +1,6 @@
 # Preliminary real-data results
 
-Status recorded on 18 November 2026. These values come from the completed Colab logs and the comparison table supplied by the author. The raw run artifacts have not yet been bundled in this repository. The full model, no-content variant and single-task variant now each have five evaluated seeds. Repeated stochastic baselines are complete; the consolidated comparison is pending.
+Status recorded on 18 November 2026. These values come from the completed Colab logs and comparison table supplied by the author. The raw run artifacts have not yet been bundled in this repository. The full model, no-content variant and single-task variant each have five evaluated seeds; repeated stochastic baselines and the consolidated 2022 comparison have completed.
 
 ## Protocol
 
@@ -69,13 +69,31 @@ Playtime log-MAE on the common eligible test rows was 0.8907 for NFF-MTL, 1.2425
 
 The live Colab notebook now records one completed single-task run. It selected epoch 10 on 2021 validation (positive-review NDCG@20=0.04288). Its 2022 positive-review NDCG@20 was 0.03548 and Recall@20 was 0.07411; the any-review sensitivity scores were NDCG@20=0.03285 and Recall@20=0.06759. The same-seed full model scored 0.03261 and 0.07192 on the primary positive-review ranking task. This one-seed observation is not a multi-seed ablation conclusion. The single-task run has no playtime prediction result because that auxiliary task is disabled. The author’s Drive records are `runs_final/2026-11-17-095111-final-train-single_task-seed0` and `runs_final/2026-11-17-110731-final-evaluate-test-single_task-seed0`; the raw artifacts have not been imported.
 
+## Consolidated final comparison
+
+The consolidated `test-positive` comparison completed in `runs_final/2026-11-18-140154-final-compare` using 20 result directories. Its summary is:
+
+| Model | Runs | NDCG@20 | Recall@20 | Observed-review label AUC |
+| --- | ---: | ---: | ---: | ---: |
+| ALS | 5 | 0.05275 | 0.10555 | 0.55651 |
+| ItemKNN-CF | 1 | 0.04875 | 0.09769 | 0.57841 |
+| NFF-MTL[single_task] | 5 | 0.03633 | 0.07707 | 0.64510 |
+| NFF-MTL | 5 | 0.03319 | 0.07344 | 0.64617 |
+| NFF-MTL[no_content] | 5 | 0.03052 | 0.06899 | 0.64627 |
+| BPR-MF | 5 | 0.02997 | 0.06061 | 0.52981 |
+| Popularity | 1 | 0.02797 | 0.06140 | 0.56025 |
+| TagKNN | 1 | 0.00663 | 0.01232 | 0.50358 |
+| Random | 5 | 0.00038 | 0.00086 | 0.50016 |
+
+ALS leads both primary ranking metrics. The single-task variant has higher mean ranking metrics than the full multi-task model; the full model has higher mean ranking metrics than no-content. This is a descriptive comparison. The reported output does not include the paired statistics from `comparison_stats.json`, so no significance conclusion is made here. ItemKNN-CF, Popularity and TagKNN have one reported run; their run counts should be kept visible alongside five-seed means. AUC measures the observed-review label task and is not a ranking metric. The EASE test result is unconfirmed and excluded.
+
 ## Completed and pending
 
 - Colab preflight and all 63 package tests passed, with an OpenBLAS threading warning.
 - Probe, full-data two-epoch pilot and validation search completed.
 - Full model seeds 0–4 trained and evaluated on 2022. Baseline seed 0 comparison completed. Full-model seed 1–4 AUC and diversity results have not yet been imported.
 - No-content and single-task seeds 0–4 trained and evaluated on 2022. Single-task seed 1 reported positive-review NDCG@20=0.03688 and Recall@20=0.07767; seeds 3 and 4 reported 0.03746/0.07947 and 0.03666/0.07839. Seed 2 completion was supplied, but its metrics and raw artifacts have not been imported here. The five-seed single-task summary remains pending.
-- Repeated Random, BPR-MF and ALS baseline runs for seeds 1–4 completed. Seed 4 reported positive-review NDCG@20 of 0.00038, 0.02994 and 0.05262, respectively. A consolidated comparison using the raw run artifacts remains pending.
+- Repeated Random, BPR-MF and ALS baseline runs for seeds 1–4 completed. Seed 4 reported positive-review NDCG@20 of 0.00038, 0.02994 and 0.05262, respectively. The consolidated comparison completed; its raw artifacts and paired-statistics file have not been imported into this repository.
 - An exploratory EASE search on 2021 validation completed three candidates and selected l2=100.0. One subsequent 2022 EASE attempt was interrupted without result files; a second attempt has no confirmed result in the supplied notebook. EASE is excluded from reported test comparisons. NCF and LightGCN have not been implemented under this protocol.
 
 ## Reproduction cautions
